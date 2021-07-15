@@ -47,6 +47,7 @@ def youtube_login(email, password):
     print("Google Login")
 
     # finding email field and putting our email on it
+    WebDriverWait(driver,5).until(EC.visibility_of_element_located((By.XPATH,'//*[@id="identifierId"]')))
     email_field = driver.find_element_by_xpath('//*[@id="identifierId"]')
     email_field.send_keys(email)
     driver.find_element_by_id("identifierNext").click()
